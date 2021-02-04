@@ -22,22 +22,34 @@ var searched = document.querySelectorAll(".searched");
 
 var buttonClickHandler = function (event) {
     cityName = event.target.getAttribute('data-city');
-  
+    console.log(cityName)
+    if (cityName) {
+      citySearchHandler(cityName);
+      citySearched.textContent = '';
+    }
+  };
+var citySubmitHandler = function (event) {
+    event.preventDefault();
+    cityName = citySearched.value;
+
     if (cityName) {
       citySearchHandler(cityName);
   
       citySearched.textContent = '';
+      citySearch.value = '';
+    } else {
+      alert('Please enter a City name');
     }
-  };
+}
 
-function citySearchHandler(event) {
-    event.preventDefault();
-    cityName = citySearched.value;
+function citySearchHandler() {
+    // cityName = citySearched.value;
     var searched = document.createElement('div');
     searched.classList = 'cell medium-12 searched';
     searched.textContent = cityName;
     searched.setAttribute('data-city', cityName)
     cityList.appendChild(searched)
+    citySearched.value = '';
 // Openweather API Material
 // Openweather Current Conditions
 var openWeatherApiKey = '6b164df68f52a0312b614f98c9e4f6cf';
@@ -77,31 +89,31 @@ fetch(openWeatherCurrentUrl, {
             })
     
 })
-var pexelsKey = '563492ad6f91700001000001ca768a47efe1407ea915ac9502624850';
-var pexelsQuery = cityName
-    var pexels = "https://api.pexels.com/v1/search?query="+pexelsQuery+"&per_page=1";
+// var pexelsKey = '563492ad6f91700001000001ca768a47efe1407ea915ac9502624850';
+// var pexelsQuery = cityName
+//     var pexels = "https://api.pexels.com/v1/search?query="+pexelsQuery+"&per_page=1";
   
-        fetch(pexels, {
-        method: 'GET',
-        headers: { 'Authorization': pexelsKey },
-        })
-        .then(function (response) {
-            return response.json();
-          })
-            .then(function(data) {console.log(data);
-                var hero = document.querySelector(".hero");
-                var img = data.photos[0].url; 
-                var photo = "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('"+img+"'),";
-                var photographer = data.photos[0].photographer
-                var photographerAddy = data.photos[0].photographer_url
-                var photoCredit = "<a class='creditsArt' href="+photographerAddy+"v target='_blank'>Art by "+photographer+"</a>"
-                var pCredit = document.createElement('div');
-                pCredit.innerHTML = photoCredit
-                console.log(photo);
-                console.log(photographer, photographerAddy)
-                hero.style.backgroundImage = photo; 
-                hero.append(pCredit);
-            }); 
+//         fetch(pexels, {
+//         method: 'GET',
+//         headers: { 'Authorization': pexelsKey },
+//         })
+//         .then(function (response) {
+//             return response.json();
+//           })
+//             .then(function(data) {console.log(data);
+//                 var hero = document.querySelector(".hero");
+//                 var img = data.photos[0].url; 
+//                 var photo = "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('"+img+"'),";
+//                 var photographer = data.photos[0].photographer
+//                 var photographerAddy = data.photos[0].photographer_url
+//                 var photoCredit = "<a class='creditsArt' href="+photographerAddy+"v target='_blank'>Art by "+photographer+"</a>"
+//                 var pCredit = document.createElement('div');
+//                 pCredit.innerHTML = photoCredit
+//                 console.log(photo);
+//                 console.log(photographer, photographerAddy)
+//                 hero.style.backgroundImage = photo; 
+//                 hero.append(pCredit);
+//             }); 
 
   };  
 
@@ -188,5 +200,5 @@ fetch(openWeatherCurrentUrl, {
             })
     
 })
-citySearch.addEventListener('submit', citySearchHandler);
-searched.addEventListener('click', buttonClickHandler);
+citySearch.addEventListener('submit', citySubmitHandler);
+cityList.addEventListener('click', buttonClickHandler);
