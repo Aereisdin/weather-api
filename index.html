@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<div class="grid-container fluid">
+    <div id="hero" class="hero">
+        <div class="herotext"><h1>Weather Happenings</h1></div>
+        <div class="credits"><a href="https://www.pexels.com" target="_blank"><img id="pexel" src="https://images.pexels.com/lib/api/pexels-white.png"/></a></div>
+    </div>
+    <div class="grid-x align-center align-top">
+        <div class="cell medium-2 cityList">
+            <label>City Name
+                <input type="text" placeholder="Seattle">
+              </label>
+        </div>
+        <div class="cell medium-9 grid-x align-justify cityDisplay">
+            <div class="cell medium-6" style="border: 2px black solid;"><h2 id="currentCity">City</h2></div>
+            <div class="cell text-center medium-6" style="border: 2px black solid;"><h3 id="lastUpdated">Time</h3></div>
+            <div class="cell currentDisplay text-center grid-x">
+                <div id="currentWeather" class="cell medium-6 h3">Sunny</div>
+                <div id="currentHigh" class="cell medium-6 h3">High:</div>
+                <div id="currentTemp" class="cell medium-6 h3">Temp:</div>
+                <div id="currentLow" class="cell medium-6 h3">Low:</div>
+                <div id="feelsLike" class="cell medium-6 h3">Feels Like </div>
+                <div id="currentHumidity" class="cell medium-6 h3">Humidity</div>
+            </div>
+            <div class="cell futureDisplay align-justify text-center grid-x">
+                <div id="Day1" class="cell medium-2">Day 1</div>
+                <div id="Day2" class="cell medium-2">Day 2</div>
+                <div id="Day3" class="cell medium-2">Day 3</div>
+                <div id="Day4" class="cell medium-2">Day 4</div>
+                <div id="Day5" class="cell medium-2">Day 5</div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/347692fd4f.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+<script src="./assets/script.js"></script>
+
+</body>
+</html>
