@@ -64,7 +64,7 @@ var pexelsQuery = cityName
             .then(function(data) {console.log(data);
                 var hero = document.querySelector(".hero");
                 var img = data.photos[0].src.original; 
-                var photo = "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('"+img+"'),";
+                var photo = "url('"+img+"')";
                 var creditsArt = document.querySelector(".creditsArt");
                 var photographer = data.photos[0].photographer;
                 var photographerAddy = data.photos[0].photographer_url;
@@ -72,7 +72,7 @@ var pexelsQuery = cityName
                 creditsArt.innerHTML = photoCredit;
                 console.log(photo);
                 console.log(photographer, photographerAddy)
-                hero.innerHTML = '<style="background-image:"'+photo+'"'; 
+                hero.setAttribute("style", "background-image:"+photo+";"); 
             }); 
 // Openweather API Material
 // Openweather Current Conditions
@@ -89,7 +89,7 @@ fetch(openWeatherCurrentUrl, {
         })
     .then(function (data){
    
-    timeStamp.textContent = 'Updated: '+timeConverter(data.dt);
+    timeStamp.textContent = 'Current Conditions as of '+timeConverter(data.dt);
     currentCity.textContent = data.name;
     currentWeather.textContent = 'Currently: '+data.weather[0].main;
     currentTemp.textContent = 'Current Temperature: '+data.main.temp+'°F';
@@ -174,11 +174,11 @@ fetch(openWeatherCurrentUrl, {
                         else if(iconNumber5 == 50){var icon5 = fog}
             
             currentLow.textContent = 'UV Index: '+data.daily[0].uvi;
-            day1.innerHTML = '<h3>'+timeConverter(data.daily[1].dt)+'</h3><br><p>'+data.daily[1].weather[0].main+'</p><p>'+icon1+'</p><p>'+data.daily[1].weather[0].description+'</p><p>Temp '+data.daily[1].temp.day+'</p>';
-            day2.innerHTML = '<h3>'+timeConverter(data.daily[2].dt)+'</h3><br><p>'+data.daily[2].weather[0].main+'</p><p>'+icon2+'</p><p>'+data.daily[2].weather[0].description+'</p><p>Temp '+data.daily[2].temp.day+'</p>';
-            day3.innerHTML = '<h3>'+timeConverter(data.daily[3].dt)+'</h3><br><p>'+data.daily[3].weather[0].main+'</p><p>'+icon3+'</p><p>'+data.daily[3].weather[0].description+'</p><p>Temp '+data.daily[3].temp.day+'</p>';
-            day4.innerHTML = '<h3>'+timeConverter(data.daily[4].dt)+'</h3><br><p>'+data.daily[4].weather[0].main+'</p><p>'+icon4+'</p><p>'+data.daily[4].weather[0].description+'</p><p>Temp '+data.daily[4].temp.day+'</p>';
-            day5.innerHTML = '<h3>'+timeConverter(data.daily[5].dt)+'</h3><br><p>'+data.daily[5].weather[0].main+'</p><p>'+icon5+'</p><p>'+data.daily[5].weather[0].description+'</p><p>Temp '+data.daily[5].temp.day+'</p>';
+            day1.innerHTML = '<h3>'+timeConverter(data.daily[1].dt)+'</h3><br><p>'+data.daily[1].weather[0].main+'</p><p>'+icon1+'</p><p>'+data.daily[1].weather[0].description+'</p><p>Temp '+data.daily[1].temp.day+'°F</p>';
+            day2.innerHTML = '<h3>'+timeConverter(data.daily[2].dt)+'</h3><br><p>'+data.daily[2].weather[0].main+'</p><p>'+icon2+'</p><p>'+data.daily[2].weather[0].description+'</p><p>Temp '+data.daily[2].temp.day+'°F</p>';
+            day3.innerHTML = '<h3>'+timeConverter(data.daily[3].dt)+'</h3><br><p>'+data.daily[3].weather[0].main+'</p><p>'+icon3+'</p><p>'+data.daily[3].weather[0].description+'</p><p>Temp '+data.daily[3].temp.day+'°F</p>';
+            day4.innerHTML = '<h3>'+timeConverter(data.daily[4].dt)+'</h3><br><p>'+data.daily[4].weather[0].main+'</p><p>'+icon4+'</p><p>'+data.daily[4].weather[0].description+'</p><p>Temp '+data.daily[4].temp.day+'°F</p>';
+            day5.innerHTML = '<h3>'+timeConverter(data.daily[5].dt)+'</h3><br><p>'+data.daily[5].weather[0].main+'</p><p>'+icon5+'</p><p>'+data.daily[5].weather[0].description+'</p><p>Temp '+data.daily[5].temp.day+'°F</p>';
             })
     
 })
@@ -193,7 +193,7 @@ function timeConverter(UNIX_timestamp){
     var hour = a.getHours();
     var min = a.getMinutes();
     var sec = a.getSeconds();
-    var time = date + ' ' + month;
+    var time = month + ' ' + date;
     return time;
   }
   
@@ -214,7 +214,7 @@ var pexelsQuery = cityName
             .then(function(data) {console.log(data);
                 var hero = document.querySelector(".hero");
                 var img = data.photos[0].src.original; 
-                var photo = "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('"+img+"'),";
+                var photo = "url('"+img+"')";
                 var creditsArt = document.querySelector(".creditsArt");
                 var photographer = data.photos[0].photographer;
                 var photographerAddy = data.photos[0].photographer_url;
@@ -222,7 +222,7 @@ var pexelsQuery = cityName
                 creditsArt.innerHTML = photoCredit;
                 console.log(photo);
                 console.log(photographer, photographerAddy)
-                hero.style.backgroundImage = photo; 
+                hero.setAttribute("style", "background-image:"+photo+";"); 
             }); 
 // Openweather API Material
 // Openweather Current Conditions
@@ -242,7 +242,7 @@ fetch(openWeatherCurrentUrl, {
         })
     .then(function (data){
    
-    timeStamp.textContent = 'Updated: '+timeConverter(data.dt);
+    timeStamp.textContent = 'Current Conditons as of '+timeConverter(data.dt);
     currentCity.textContent = data.name;
     currentWeather.textContent = 'Currently: '+data.weather[0].main;
     currentTemp.textContent = 'Current Temperature: '+data.main.temp+'°F';
@@ -327,11 +327,11 @@ fetch(openWeatherCurrentUrl, {
             else if(iconNumber5 == 50){var icon5 = fog}
 
             currentLow.textContent = 'UV Index: '+data.daily[0].uvi;
-            day1.innerHTML = '<h3>'+timeConverter(data.daily[1].dt)+'</h3><br><p>'+data.daily[1].weather[0].main+'</p><p>'+icon1+'</p><p>'+data.daily[1].weather[0].description+'</p><p>Temp '+data.daily[1].temp.day+'</p>';
-            day2.innerHTML = '<h3>'+timeConverter(data.daily[2].dt)+'</h3><br><p>'+data.daily[2].weather[0].main+'</p><p>'+icon2+'</p><p>'+data.daily[2].weather[0].description+'</p><p>Temp '+data.daily[2].temp.day+'</p>';
-            day3.innerHTML = '<h3>'+timeConverter(data.daily[3].dt)+'</h3><br><p>'+data.daily[3].weather[0].main+'</p><p>'+icon3+'</p><p>'+data.daily[3].weather[0].description+'</p><p>Temp '+data.daily[3].temp.day+'</p>';
-            day4.innerHTML = '<h3>'+timeConverter(data.daily[4].dt)+'</h3><br><p>'+data.daily[4].weather[0].main+'</p><p>'+icon4+'</p><p>'+data.daily[4].weather[0].description+'</p><p>Temp '+data.daily[4].temp.day+'</p>';
-            day5.innerHTML = '<h3>'+timeConverter(data.daily[5].dt)+'</h3><br><p>'+data.daily[5].weather[0].main+'</p><p>'+icon5+'</p><p>'+data.daily[5].weather[0].description+'</p><p>Temp '+data.daily[5].temp.day+'</p>';
+            day1.innerHTML = '<h3>'+timeConverter(data.daily[1].dt)+'</h3><br><p>'+data.daily[1].weather[0].main+'</p><p>'+icon1+'</p><p>'+data.daily[1].weather[0].description+'</p><p>Temp '+data.daily[1].temp.day+'°F</p>';
+            day2.innerHTML = '<h3>'+timeConverter(data.daily[2].dt)+'</h3><br><p>'+data.daily[2].weather[0].main+'</p><p>'+icon2+'</p><p>'+data.daily[2].weather[0].description+'</p><p>Temp '+data.daily[2].temp.day+'°F</p>';
+            day3.innerHTML = '<h3>'+timeConverter(data.daily[3].dt)+'</h3><br><p>'+data.daily[3].weather[0].main+'</p><p>'+icon3+'</p><p>'+data.daily[3].weather[0].description+'</p><p>Temp '+data.daily[3].temp.day+'°F</p>';
+            day4.innerHTML = '<h3>'+timeConverter(data.daily[4].dt)+'</h3><br><p>'+data.daily[4].weather[0].main+'</p><p>'+icon4+'</p><p>'+data.daily[4].weather[0].description+'</p><p>Temp '+data.daily[4].temp.day+'°F</p>';
+            day5.innerHTML = '<h3>'+timeConverter(data.daily[5].dt)+'</h3><br><p>'+data.daily[5].weather[0].main+'</p><p>'+icon5+'</p><p>'+data.daily[5].weather[0].description+'</p><p>Temp '+data.daily[5].temp.day+'°F</p>';
         })
             
     

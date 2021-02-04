@@ -7,6 +7,9 @@ body {
     font-family: 'Open Sans', 'sans-serif';
     font-size: 16pt;
 }
+a {
+    color: white;
+}
 .hero {
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg'); */
     height: 250px;
@@ -24,6 +27,8 @@ body {
     transform: translate(-50%, -50%);
     color: white;
     text-shadow: 2px 3px black;
+    font-size: 32pt;
+    font-weight: 900;
 }
 .credits {
     position: absolute;
@@ -41,22 +46,40 @@ body {
     font-weight: 600;
     color: white;
     font-size: 12pt;
+    
 }
-
 #pexel {
     height: 33px;
     width: auto;
 }
 .cityList {
+    margin: 25px;
     background-color: rgb(78, 227, 163);
     padding: 10px;
+    border-radius: 15px;
 }
 .cityDisplay {
     background-color: rgb(14, 122, 230);
-    margin-left: 10px;
-    color: white;
-    padding:10px;
-    height: 1000px;
+    margin: 25px;
+    color: rgb(234, 234, 234);
+    padding:0px;
+    height: 900px;
+    border-radius: 25px;
+    /* text-shadow: 2px 3px black; */
+}
+.city {
+    height: 1px;
+    padding-top: 10px;
+}
+.time {
+    height: 1px;
+}
+.currentDisplay {
+    border-bottom: rgb(234, 234, 234) solid 2px;
+}
+.futureDisplay {
+    padding-top: 15px;
+    height: 275px;
 }
 #currentCity {
     margin-bottom: 20px;

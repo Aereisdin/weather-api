@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 <div class="grid-container fluid">
-    <div id="hero" class="hero">
-        <div class="herotext"><h1>Weather Happenings</h1></div>
+    <div class="hero">
+        <div class="herotext">Weather Happenings</div>
         <div class="credits"><a href="https://www.pexels.com" target="_blank"><img id="pexel" src="https://images.pexels.com/lib/api/pexels-white.png"/></a></div>
         <div class="creditsArt"></div>
     </div>
@@ -23,8 +23,8 @@
             </form>
         </div>
         <div class="cell medium-9 grid-x align-justify cityDisplay">
-            <div class="cell medium-6" style="border: 2px black solid;"><h2 id="currentCity">City</h2></div>
-            <div class="cell text-center medium-6" style="border: 2px black solid;"><h3 id="lastUpdated">Time</h3></div>
+            <div class="cell city medium-12 text-center"><h1 id="currentCity">City</h1></div>
+            <div class="cell time text-center medium-12"><h3 id="lastUpdated">Time</h3></div>
             <div class="cell currentDisplay text-center grid-x">
                 <div id="currentWeather" class="cell medium-6 h3">Sunny</div>
                 <div id="currentHigh" class="cell medium-6 h3">High:</div>
@@ -33,6 +33,7 @@
                 <div id="feelsLike" class="cell medium-6 h3">Feels Like </div>
                 <div id="currentHumidity" class="cell medium-6 h3">Humidity</div>
             </div>
+            
             <div class="cell futureDisplay align-justify text-center grid-x">
                 <div id="Day1" class="cell medium-2">Day 1</div>
                 <div id="Day2" class="cell medium-2">Day 2</div>
