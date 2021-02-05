@@ -85,3 +85,16 @@ a {
     margin-bottom: 20px;
     font-weight: 700;
 }
+.searched {
+    border: 3px rgb(255, 255, 255) solid;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    padding: 1px, 0px, 3px, 0px;
+    color:white;
+    font-weight: bolder;
+    /* text-shadow: 1px 2px #222; */
+    font-size: 20pt;
+    background-color: slateblue;
+    margin-bottom: 3px;
+}

@@ -61,7 +61,7 @@ var pexelsQuery = cityName
         .then(function (response) {
             return response.json();
           })
-            .then(function(data) {console.log(data);
+            .then(function(data) {
                 var hero = document.querySelector(".hero");
                 var img = data.photos[0].src.original; 
                 var photo = "url('"+img+"')";
@@ -70,8 +70,6 @@ var pexelsQuery = cityName
                 var photographerAddy = data.photos[0].photographer_url;
                 var photoCredit = "<a href="+photographerAddy+"v target='_blank'>Art by "+photographer+"</a>"
                 creditsArt.innerHTML = photoCredit;
-                console.log(photo);
-                console.log(photographer, photographerAddy)
                 hero.setAttribute("style", "background-image:"+photo+";"); 
             }); 
 // Openweather API Material
@@ -211,7 +209,7 @@ var pexelsQuery = cityName
         .then(function (response) {
             return response.json();
           })
-            .then(function(data) {console.log(data);
+            .then(function(data) {
                 var hero = document.querySelector(".hero");
                 var img = data.photos[0].src.original; 
                 var photo = "url('"+img+"')";
@@ -220,8 +218,6 @@ var pexelsQuery = cityName
                 var photographerAddy = data.photos[0].photographer_url;
                 var photoCredit = "<a href="+photographerAddy+"v target='_blank'>Art by "+photographer+"</a>"
                 creditsArt.innerHTML = photoCredit;
-                console.log(photo);
-                console.log(photographer, photographerAddy)
                 hero.setAttribute("style", "background-image:"+photo+";"); 
             }); 
 // Openweather API Material
